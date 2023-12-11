@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
 
     const getMovies = async () => {
         try {
-            const response = await fetch('http://192.168.1.55:8090/pharmacie/');
+            const response = await fetch('https://pharma.cyclic.app/api/pharmacies');
             const json = await response.json();
             setData(json);
         } catch (error) {
@@ -32,8 +32,8 @@ export default function Home({ navigation }) {
                             <View style={styles.item}>
                                 <Image style={styles.image} source={{ uri: 'data:image/jpeg;base64,'+item.image }} />
                                 <View style={styles.separator}>
-                                    <Text style={styles.titleText}>{item.nom}</Text>
-                                    <Text style={styles.baseText}>{item.adresse}</Text>
+                                    <Text style={styles.titleText}>{item.name}</Text>
+                                    <Text style={styles.baseText}>{item.address}</Text>
                                     
                                 </View>
                             </View>

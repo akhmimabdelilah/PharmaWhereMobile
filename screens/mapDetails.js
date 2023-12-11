@@ -9,8 +9,8 @@ const ASPECT_RATIO = screen.width / screen.height;
 const LATITUDE_DELTA = 0.04;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 export default function MapDetails({ navigation }) {
-    const lat = navigation.getParam('lat');
-    const long = navigation.getParam('log')
+    const lat = navigation.getParam('latitude');
+    const long = navigation.getParam('longitude')
     const [currentLat,setCurrentLat] =useState(33.2443)
     const [currentLong,setCurrentLong] = useState(-8.4991)
     const [points, setPoints] = useState([{ latitude: lat, longitude: long },{ latitude: currentLat, longitude: currentLong, }]);
@@ -59,7 +59,7 @@ export default function MapDetails({ navigation }) {
                 >
                     <Image source={require('../assets/pharmacy-icon.png')} style={{ height: 50, width: 50 }} />
                     <Callout>
-                        <Text>{navigation.getParam('nom')}</Text>
+                        <Text>{navigation.getParam('name')}</Text>
                     </Callout>
                 </Marker>
                 <Marker
